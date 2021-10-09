@@ -1,15 +1,30 @@
 function handleFormSubmit(event) {
   event.preventDefault();
 
+let cbs = document.querySelectorAll("input[type=checkbox]");
+let res = [...cbs].filter(a => a.checked).map(b => b.name);
+
+let slidervalue = document.getElementById("slider").value
+
+console.log (res)
+fetch(`${window.origin}/api/packliste`,
+  { method: 'POST',
+  body: JSON.stringify({"checkboxes":res, "slider":slidervalue}),
+  headers: new Headers({"content-type":"application/json"})}).then(response => response.json()).then(data => console.log(data));
+
+  /*
   const data = new FormData(event.target);
 
   const formJSON = Object.fromEntries(data.entries());
 
   // for multi-selects, we need special handling
-
   const results = document.querySelector('.results pre');
   results.innerText = JSON.stringify(formJSON, null, 2);
+  */
 }
+
+const form = document.querySelector('.contact-form');
+form.addEventListener('submit', handleFormSubmit);
 
 let volumeSlider = document.getElementById('name');
 
@@ -22,6 +37,5 @@ volumeSlider.addEventListener('input', function(event) {
 setzeVolumeAnzeige(volumeSlider.value);
 
 
-
-const form = document.querySelector('.contact-form');
-form.addEventListener('submit', handleFormSubmit);
+let cbs = document.querySelectorAll("input[type=checkbox]");
+let res = [...cbs].filter(a => a.checked).map(b => b.name);

@@ -6,40 +6,41 @@
 
   <form>
     <div class="input-group">
-      <input id="salutation-mr" name="salutation" type="checkbox" value="Fahrrad."/>
-      <label class="inline" for="salutation-mr">Fahrrad</label>
+      <input id="transport-fahrrad" name="fahrrad" type="checkbox" value="Fahrrad."/>
+      <label class="inline" for="transport-fahrrad">Fahrrad</label>
 
-      <input id="salutation-mrs" name="salutation" type="checkbox" value="Camper."/>
-      <label class="inline" for="salutation-mrs">Camper</label>
+      <input id="transport-camper" name="camper" type="checkbox" value="Camper."/>
+      <label class="inline" for="transport-camper">Camper</label>
 
-      <input id="salutation-ms" name="salutation" type="checkbox" value="Auto"/>
-      <label class="inline" for="salutation-ms">Auto</label>
+      <input id="transport-auto" name="auto" type="checkbox" value="Auto"/>
+      <label class="inline" for="transport-auto">Auto</label>
     </div>
 
-<div class="input-group">
-      <input id="salutation-mr" name="salutation" type="checkbox" value="Wandern."/>
-      <label class="inline" for="salutation-mr">Wandern</label>
+  <div class="input-group">
+      <input id="type-wandern" name="wandern" type="checkbox" value="Wandern."/>
+      <label class="inline" for="type-wandern">Wandern</label>
 
-      <input id="salutation-mrs" name="salutation" type="checkbox" value="Zelten."/>
-      <label class="inline" for="salutation-mrs">Zelten</label>
+      <input id="type-zelten" name="zelten" type="checkbox" value="Zelten."/>
+      <label class="inline" for="type-zelten">Zelten</label>
+    </div>
+
+      <div class="input-group">
+      <label for="name">Tage</label>
+      <input id="slider" name="tage" type="range" value="3" min="1" max="14"/>
+      <output id="output" for="name"></output>
     </div>
 
 
     <div class="input-group">
-      <label for="name">Tage</label>
-      <input id="name" name="name" type="range" value="3" min="1" max="14"/>
-      <output id="output" for="name"></output>
+      <input id="art-ultralight" name="ultralight" type="checkbox" value="Ultralight."/>
+      <label class="inline" for="art-ultralight">Ultralight</label>
 
-      <input id="salutation-mr" name="salutation" type="checkbox" value="Ultralight."/>
-      <label class="inline" for="salutation-mr">Ultralight</label>
-
-      <input id="salutation-mrs" name="salutation" type="checkbox" value="Glamping."/>
-      <label class="inline" for="salutation-mrs">Glamping</label>
-
+      <input id="art-glamping" name="glamping" type="checkbox" value="Glamping."/>
+      <label class="inline" for="art-glamping">Glamping</label>
     </div>
 
     <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>
-    <button type="submit">weiter</button>
+    <button type="submit">Send It!</button>
   </form>
 </section>
 

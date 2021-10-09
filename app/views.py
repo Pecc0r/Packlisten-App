@@ -16,6 +16,6 @@ def packliste():
     payload=request.get_json(force = True)
     print(payload)
     return Response(
-      json.dumps({}),
+      json.dumps(payload),
       mimetype = "application/json"
     )
