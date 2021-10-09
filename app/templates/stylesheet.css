@@ -1,0 +1,52 @@
+body {
+  background-image: url('panorama_blau.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  color: #000000;
+  /* text-align:; */
+
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 96px;
+
+  position: relative;
+   left: 140px;
+   top: 30px;
+}
+
+/* identical to box height */
+}
+
+p {
+  font-family: Dosis;
+  color: #614063;
+  font-size: 24px;
+
+}
+.card.draggable {
+    margin-bottom: 0rem;
+    cursor: grab;
+}
+
+.droppable {
+    background-color: var(--success);
+    min-height: 120px;
+    margin-bottom: 0rem;
+}
+
+.card-title {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #614063;
+
+}
