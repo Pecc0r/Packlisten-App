@@ -10,7 +10,9 @@ console.log (res)
 fetch(`${window.origin}/api/packliste`,
   { method: 'POST',
   body: JSON.stringify({"checkboxes":res, "slider":slidervalue}),
-  headers: new Headers({"content-type":"application/json"})}).then(response => response.json()).then(data => console.log(data));
+  headers: new Headers({"content-type":"application/json"})})
+  .then(response => response.json())
+  .then(data => render(data));
 
   /*
   const data = new FormData(event.target);
@@ -36,6 +38,22 @@ volumeSlider.addEventListener('input', function(event) {
 });
 setzeVolumeAnzeige(volumeSlider.value);
 
+function render (content) {
+  document.getElementById("content").innerHTML =`
+   <h1> Packliste </h1>
+   <div class="columns">
+      <div class="col">
+      <p>${key}</p>
+         <div class="item">
+            <input type="checkbox" name="${val}"/>
+            <label for="${val}">${val}</label>
+         </div>
+      </div>
+   </div>
+   ${JSON.stringify(content)}
+   </p>
+  `
+}
 
 let cbs = document.querySelectorAll("input[type=checkbox]");
 let res = [...cbs].filter(a => a.checked).map(b => b.name);
