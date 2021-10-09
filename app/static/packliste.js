@@ -28,7 +28,7 @@ fetch(`${window.origin}/api/packliste`,
 const form = document.querySelector('.contact-form');
 form.addEventListener('submit', handleFormSubmit);
 
-let volumeSlider = document.getElementById('name');
+let volumeSlider = document.getElementById('slider');
 
 function setzeVolumeAnzeige(wert) {
     document.getElementById('output').value = wert;
@@ -38,21 +38,69 @@ volumeSlider.addEventListener('input', function(event) {
 });
 setzeVolumeAnzeige(volumeSlider.value);
 
-function render (content) {
+function render (c) {
+  let val="foo"
   document.getElementById("content").innerHTML =`
    <h1> Packliste </h1>
-   <div class="columns">
+   <div class="columns" style="  display: flex;
+     justify-content: space-between;">
+
+    <!-- Infrastruktur --!>
       <div class="col">
-      <p>${key}</p>
-         <div class="item">
-            <input type="checkbox" name="${val}"/>
-            <label for="${val}">${val}</label>
-         </div>
+      <p>Infrastruktur</p>
+
+        ${c["Infrastruktur"].map(val => `
+          <div class="item">
+             <input type="checkbox" name="${val}"/>
+             <label for="${val}">${val}</label>
+          </div>
+          `).join("")
+       }
       </div>
-   </div>
-   ${JSON.stringify(content)}
-   </p>
+
+
+          <!-- Kleidung --!>
+            <div class="col">
+            <p>Kleidung</p>
+            ${c["Kleidung"].map(val => `
+              <div class="item">
+                 <input type="checkbox" name="${val}"/>
+                 <label for="${val}">${val}</label>
+              </div>
+              `).join("")
+           }
+          </div>
+
+                <!-- Kochen --!>
+                  <div class="col">
+                  <p>Kochen</p>
+                  ${c["Kochen"].map(val => `
+                    <div class="item">
+                       <input type="checkbox" name="${val}"/>
+                       <label for="${val}">${val}</label>
+                    </div>
+                    `).join("")
+                 }
+                </div>
+
+                  <!-- Hygiene --!>
+                    <div class="col">
+                    <p>Hygiene</p>
+                    ${c["Hygiene"].map(val => `
+                      <div class="item">
+                         <input type="checkbox" name="${val}"/>
+                         <label for="${val}">${val}</label>
+                      </div>
+                      `).join("")
+                   }
+                  </div>
+      </div>
+
   `
+
+  document.getElementById("bg").classList.remove("bg1")
+  document.getElementById("bg").classList.add("bg2")
+
 }
 
 let cbs = document.querySelectorAll("input[type=checkbox]");

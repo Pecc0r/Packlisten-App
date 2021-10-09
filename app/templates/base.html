@@ -7,18 +7,33 @@
 {% block scripts %}
 {{super()}}
 <script type="text/javascript" src="{{url_for('.static', filename='packliste.js')}}"></script>
+<style>
+  div.columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div.col {
+    display: flex;
+   flex-direction: column;
+  }
+
+section#content {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.title {
+  margin–bottom: 12px;
+}
+</style>
 {% endblock scripts %}
 
 {% block title %}Welcome to {{ title }}{% endblock %}
 
 {% block navbar %}
-<div class="navbar navbar-fixed-top">
-    <!-- ... -->
-</div>
+
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron text-center">
-    <h1>VSUP - Juchuu</h1>
-</div>
+
 {% endblock %}

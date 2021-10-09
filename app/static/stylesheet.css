@@ -1,9 +1,28 @@
-body {
-  background-image: url('panorama_blau.svg');
+body, html {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+div.body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: Dosis;
+  color: #614063;
+}
+
+.bg1 {
+  background-image: url('panorama.svg');
+}
+
+.bg2 {
+  background-image: url('panorama_blau.svg');
 }
 
 h1 {
@@ -15,13 +34,8 @@ h1 {
   font-weight: bold;
   font-size: 72px;
   line-height: 96px;
+  margin-bottom: 12px;
 
-  position: relative;
-   left: 140px;
-   top: 30px;
-}
-
-/* identical to box height */
 }
 
 p {
@@ -151,3 +165,18 @@ p {
     background: var(--color-darkest);
     cursor: pointer;
   }
+
+  div.columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div.col {
+    display: flex;
+   flex-direction: column;
+  }
+
+section#content {
+  margin: 0 auto;
+  max-width: 800px;
+}
