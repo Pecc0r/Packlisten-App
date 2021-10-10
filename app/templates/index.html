@@ -8,42 +8,57 @@
   <h1>Ab in die Natur</h1>
 
   <form>
-    <div class="input-group">
-      <input id="transport-fahrrad" name="fahrrad" type="checkbox" value="Fahrrad."/>
-      <label class="inline" for="transport-fahrrad">Fahrrad</label>
+    <div class="tour-type">
+      <label class="inline" for="transport-fahrrad">
+        <input id="transport-fahrrad" name="fahrrad" type="checkbox" value="Fahrrad."/>
+        <span class="bike-anim">
+          <img src="/static/noun_Bike_4279555.svg" style="width: 5rem">
+        </span>
+        Fahrrad
+      </label>
 
-      <input id="transport-camper" name="camper" type="checkbox" value="Camper."/>
-      <label class="inline" for="transport-camper">Camper</label>
+      <label class="inline" for="transport-camper">
+        <input id="transport-camper" name="camper" type="checkbox" value="Camper."/>
+        Camper
+      </label>
 
-      <input id="transport-auto" name="auto" type="checkbox" value="Auto"/>
-      <label class="inline" for="transport-auto">Auto</label>
+      <label class="inline" for="transport-auto">
+        <input id="transport-auto" name="auto" type="checkbox" value="Auto"/>
+        Auto
+      </label>
+
+      <label class="inline" for="type-wandern">
+        <input id="type-wandern" name="wandern" type="checkbox" value="Wandern."/>
+        Wandern
+      </label>
+
+      <label class="inline" for="type-zelten">
+        <input id="type-zelten" name="zelten" type="checkbox" value="Zelten."/>
+        Zelten
+      </label>
+
+      <label class="inline" for="art-ultralight">
+        <input id="art-ultralight" name="ultralight" type="checkbox" value="Ultralight."/>
+        Ultralight
+      </label>
+
+      <label class="inline" for="art-glamping">
+        <input id="art-glamping" name="glamping" type="checkbox" value="Glamping."/>
+        Glamping
+      </label>
     </div>
 
-  <div class="input-group">
-      <input id="type-wandern" name="wandern" type="checkbox" value="Wandern."/>
-      <label class="inline" for="type-wandern">Wandern</label>
+    <div class="tour-length">
+      <label>
+        <output id="output"></output>
+        Tag(e)
+        <input id="slider" name="tage" type="range" value="3" min="1" max="14"/>
+      </label>
 
-      <input id="type-zelten" name="zelten" type="checkbox" value="Zelten."/>
-      <label class="inline" for="type-zelten">Zelten</label>
+      <button type="submit" class="next">Weiter</button>
     </div>
-
-
-    <div class="input-group">
-      <input id="art-ultralight" name="ultralight" type="checkbox" value="Ultralight."/>
-      <label class="inline" for="art-ultralight">Ultralight</label>
-
-      <input id="art-glamping" name="glamping" type="checkbox" value="Glamping."/>
-      <label class="inline" for="art-glamping">Glamping</label>
-    </div>
-
-    <div class="input-group">
-    <label for="name">Tage</label>
-    <input id="slider" name="tage" type="range" value="3" min="1" max="14"/>
-    <output id="output" for="name"></output>
-  </div>
 
     <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>
-    <button type="submit">Weiter</button>
   </form>
 </section>
 </div>

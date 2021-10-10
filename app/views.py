@@ -19,7 +19,7 @@ def packliste():
       "Infrastruktur":[],
       "Kleidung":[],
       "Kochen":[],
-      "Hygiene":[],
+      "Hygiene":["Hörgeräte"],
     }
     if "ultralight" in payload["checkboxes"]:
         if "fahrrad" in payload["checkboxes"] and "wandern" in payload["checkboxes"]:
@@ -37,17 +37,23 @@ def packliste():
            packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
            packliste["Kochen"] += ["UL-Kocher", "X-Bowl", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
            packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
-    elif "glamping" in payload["checkboxes"]:
-        if "fahrrad" in payload["checkboxes"] and "camper" in payload["checkboxes"]:
-           packliste["Infrastruktur"] += ["Fahrrad", "Fahrradhelm", "Palettenkissen", "Heckzelt", "Kissen", "Decke"]
-           packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
-           packliste["Kochen"] += ["Gaskocher", "Gas", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
-           packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
+    else:
+        if "wandern" in payload["checkboxes"]:
+            packliste["Infrastruktur"] += ["Wanderstöcke", "Wanderrucksack"]
+        if "fahrrad" in payload["checkboxes"]:
+            packliste["Infrastruktur"] += ["Fahrrad", "Fahrradhelm"]
         if "camper" in payload["checkboxes"]:
-           packliste["Infrastruktur"] += ["Palettenkissen", "Heckzelt", "Kissen", "Decke"]
-           packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
-           packliste["Kochen"] += ["Gaskocher", "Gas", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
-           packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
+            packliste["Infrastruktur"] += ["Palettenkissen", "Heckzelt", "Kissen", "Decke", "Stühle"]
+            packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
+            packliste["Kochen"] += ["Gaskocher", "Gas", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
+            if "fahrrad" in payload["checkboxes"]:
+               packliste["Infrastruktur"] += ["Fahrradträger"]
+        if "glamping" in payload["checkboxes"]:
+            if "camper" in payload["checkboxes"]:
+               packliste["Infrastruktur"] += ["Palettenkissen", "Heckzelt", "Kissen", "Decke"]
+               packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
+               packliste["Kochen"] += ["Gaskocher", "Gas", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
+               packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
     return Response(
       json.dumps(packliste),
       mimetype = "application/json"
