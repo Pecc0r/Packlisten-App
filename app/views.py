@@ -19,14 +19,14 @@ def packliste():
       "Infrastruktur":[],
       "Kleidung":[],
       "Kochen":[],
-      "Hygiene":["Hörgeräte"],
+      "Hygiene":["Hörgeräte", "Maske"],
     }
     if "ultralight" in payload["checkboxes"]:
         if "fahrrad" in payload["checkboxes"] and "wandern" in payload["checkboxes"]:
-           packliste["Infrastruktur"] += ["UL-Zelt", "Fahrrad", "Fahrradhelm", "Wanderstöcke", "Wanderrucksack", "Schlafsack", "Isomatte", "Heringe", "Kissen", "Iso-Sitzmatte"]
-           packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
+           packliste["Infrastruktur"] += ["UL-Zelt", "Fahrrad", "Fahrradhelm", "Wanderstöcke", "Wanderrucksack", "Schlafsack", "Luftmatratze", "Heringe", "Kissen", "Iso-Sitzmatte", "Stirnlampe", "Powerbank", "Stempelhefte"]
+           packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen", "Wanderschuhe", "Jacke/Cape", "Sonnenbrille"]
            packliste["Kochen"] += ["UL-Kocher", "X-Bowl", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
-           packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
+           packliste["Hygiene"] += ["Pflaster", "Sonnencreme" "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
         elif "fahrrad" in payload["checkboxes"]:
            packliste["Infrastruktur"] += ["UL-Zelt", "Fahrrad", "Fahrradhelm", "Schlafsack", "Isomatte", "Heringe", "Kissen", "Iso-Sitzmatte"]
            packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
@@ -39,7 +39,7 @@ def packliste():
            packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
     else:
         if "wandern" in payload["checkboxes"]:
-            packliste["Infrastruktur"] += ["Wanderstöcke", "Wanderrucksack"]
+            packliste["Infrastruktur"] += ["Wanderstöcke", "Wanderrucksack", "Stempelhefte"]
         if "fahrrad" in payload["checkboxes"]:
             packliste["Infrastruktur"] += ["Fahrrad", "Fahrradhelm"]
         if "camper" in payload["checkboxes"]:
