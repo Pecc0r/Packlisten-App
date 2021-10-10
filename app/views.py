@@ -44,16 +44,14 @@ def packliste():
             packliste["Infrastruktur"] += ["Fahrrad", "Fahrradhelm"]
         if "camper" in payload["checkboxes"]:
             packliste["Infrastruktur"] += ["Palettenkissen", "Heckzelt", "Kissen", "Decke", "Stühle"]
-            packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
+            packliste["Kleidung"] += ["Buff", "Schlafsachen", "Socken", "BH", "Unterhosen"]
             packliste["Kochen"] += ["Gaskocher", "Gas", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
             if "fahrrad" in payload["checkboxes"]:
                packliste["Infrastruktur"] += ["Fahrradträger"]
         if "glamping" in payload["checkboxes"]:
             if "camper" in payload["checkboxes"]:
-               packliste["Infrastruktur"] += ["Palettenkissen", "Heckzelt", "Kissen", "Decke"]
-               packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]
-               packliste["Kochen"] += ["Gaskocher", "Gas", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
-               packliste["Hygiene"] += ["Hörgeräte", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
+               packliste["Infrastruktur"] += ["Teppich", "Heizung"]
+               packliste["Kleidung"] += ["Kleider",]
     return Response(
       json.dumps(packliste),
       mimetype = "application/json"
