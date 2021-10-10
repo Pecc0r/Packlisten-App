@@ -34,7 +34,8 @@ h1 {
   font-weight: bold;
   font-size: 72px;
   line-height: 96px;
-  margin-bottom: 12px;
+  margin-bottom: 46px;
+  margin-top: 100px;
 
 }
 
@@ -44,6 +45,7 @@ p {
   font-size: 24px;
   margin-top: 0.5rem;
   font-size: 87.5%;
+
 
   :root {
     --color-lightest: #f9fdfe;
@@ -94,12 +96,13 @@ p {
   .input-group {
     margin-top: 0.25rem;
     padding: 0.5rem 1rem;
+    background: #FBF0F5;
   }
 
   .contact-form label {
     display: block;
     color: $color-gray-dark;
-    font-family: Lato, sans-serif;
+    font-family: Playfair Display, sans-serif;
     font-size: 90%;
     line-height: 1.125;
   }
@@ -126,12 +129,14 @@ p {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     transition: 150ms border-color linear;
+    background: #FBF0F5;
   }
 
   .contact-form input[type=checkbox],
   .contact-form input[type=radio] {
     display: inline-block;
     width: auto;
+
   }
 
   .contact-form input[type=checkbox]:not(:first-of-type),
