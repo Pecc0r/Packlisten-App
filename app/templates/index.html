@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {{super()}}
-<div id="bg" class="body bg1">
+<div id="bg" class="body">
 
 
 <section id="content" class="contact-form">
@@ -43,6 +43,7 @@
         Zelten
       </label>
 
+
       <label class="inline" for="art-ultralight">
         <input id="art-ultralight" name="ultralight" type="checkbox" value="Ultralight."/>
         Ultralight
@@ -58,7 +59,8 @@
       <label>
         <output id="output"></output>
         Tag(e)
-        <input id="slider" name="tage" type="range" value="3" min="1" max="14"/>
+        <input id="slider" name="tage" type="range" value="3" min="1" max="14"
+               style="background-color: transparent"/>
       </label>
 
       <button type="submit" class="next">Weiter</button>

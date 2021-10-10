@@ -26,7 +26,7 @@ def packliste():
            packliste["Infrastruktur"] += ["UL-Zelt", "Fahrrad", "Fahrradhelm", "Wanderstöcke", "Wanderrucksack", "Schlafsack", "Luftmatratze", "Heringe", "Kissen", "Iso-Sitzmatte", "Stirnlampe", "Powerbank", "Stempelhefte"]
            packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen", "Wanderschuhe", "Jacke/Cape", "Sonnenbrille"]
            packliste["Kochen"] += ["UL-Kocher", "X-Bowl", "Titanlöffel", "Hauptmahlzeiten", "Wasserflaschen", "Trailmix"]
-           packliste["Hygiene"] += ["Pflaster", "Sonnencreme" "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
+           packliste["Hygiene"] += ["Pflaster", "Sonnencreme", "Bürste", "Deo", "Zahnbürste", "UL-Handtuch", "Schminke"]
         elif "fahrrad" in payload["checkboxes"]:
            packliste["Infrastruktur"] += ["UL-Zelt", "Fahrrad", "Fahrradhelm", "Schlafsack", "Isomatte", "Heringe", "Kissen", "Iso-Sitzmatte"]
            packliste["Kleidung"] += ["Buff", "Sporthose", "Wandersocken", "Sportkleid", "Merinopulli", "BH", "Unterhosen"]

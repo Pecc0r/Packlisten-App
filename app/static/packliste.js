@@ -41,67 +41,78 @@ setzeVolumeAnzeige(volumeSlider.value);
 function render (c) {
   let val="foo"
   document.getElementById("content").innerHTML =`
-   <h1> Packliste </h1>
-   <div class="columns" style="  display: flex;
-     justify-content: space-between;">
+   <div class="packliste">
+     <h1> Packliste </h1>
+     <div class="columns" style="  display: flex;
+       justify-content: space-between;">
 
-    <!-- Infrastruktur --!>
+      <!-- Infrastruktur --!>
       <div class="col">
       <p>Infrastruktur</p>
 
         ${c["Infrastruktur"].map(val => `
           <div class="item">
-             <input type="checkbox" name="${val}"/>
-             <label for="${val}">${val}</label>
+            <label for="${val}">
+              <input type="checkbox" name="${val}" id="${val}"/>
+             ${val}
+            </label>
           </div>
           `).join("")
        }
       </div>
 
 
-          <!-- Kleidung --!>
-            <div class="col">
-            <p>Kleidung</p>
-            ${c["Kleidung"].map(val => `
-              <div class="item">
-                 <input type="checkbox" name="${val}"/>
-                 <label for="${val}">${val}</label>
-              </div>
-              `).join("")
-           }
+      <!-- Kleidung --!>
+      <div class="col">
+        <p>Kleidung</p>
+        ${c["Kleidung"].map(val => `
+          <div class="item">
+            <label for="${val}">
+              <input type="checkbox" name="${val}" id="${val}"/>
+              ${val}
+            </label>
           </div>
-
-                <!-- Kochen --!>
-                  <div class="col">
-                  <p>Kochen</p>
-                  ${c["Kochen"].map(val => `
-                    <div class="item">
-                       <input type="checkbox" name="${val}"/>
-                       <label for="${val}">${val}</label>
-                    </div>
-                    `).join("")
-                 }
-                </div>
-
-                  <!-- Hygiene --!>
-                    <div class="col">
-                    <p>Hygiene</p>
-                    ${c["Hygiene"].map(val => `
-                      <div class="item">
-                         <input type="checkbox" name="${val}"/>
-                         <label for="${val}">${val}</label>
-                      </div>
-                      `).join("")
-                   }
-                  </div>
+          `).join("")
+       }
       </div>
 
+      <!-- Kochen --!>
+      <div class="col">
+        <p>Kochen</p>
+        ${c["Kochen"].map(val => `
+          <div class="item">
+            <label for="${val}">
+              <input type="checkbox" name="${val}" id="${val}"/>
+              ${val}
+            </label>
+          </div>
+          `).join("")
+       }
+      </div>
+
+      <!-- Hygiene --!>
+      <div class="col">
+        <p>Hygiene</p>
+        ${c["Hygiene"].map(val => `
+          <div class="item">
+            <label for="${val}">
+              <input type="checkbox" name="${val}" id="${val}"/>
+              ${val}
+            </label>
+          </div>
+          `).join("")
+       }
+      </div>
+    </div>
+  </div>
   `
 
-  document.getElementById("bg").classList.remove("bg1")
-  document.getElementById("bg").classList.add("bg2")
+  document.body.classList.remove("bg1")
+  document.body.classList.add("bg2")
 
 }
 
 let cbs = document.querySelectorAll("input[type=checkbox]");
 let res = [...cbs].filter(a => a.checked).map(b => b.name);
+
+document.body.classList.add("bg1");
